@@ -1,0 +1,298 @@
+<script>
+AOS.init(); //Inicio Animate on Scroll Library
+</script>
+<style>
+.site-header-placeholder{display:none;}
+#inicio-vb{background-color:#99f0ff;
+background-image:
+radial-gradient(at 66% 73%, hsla(107,93%,76%,1) 0px, transparent 50%),
+radial-gradient(at 73% 96%, hsla(72,64%,66%,1) 0px, transparent 50%),
+radial-gradient(at 3% 96%, hsla(106,64%,71%,1) 0px, transparent 50%),
+radial-gradient(at 94% 56%, hsla(218,99%,73%,1) 0px, transparent 50%),
+radial-gradient(at 16% 65%, hsla(277,69%,79%,1) 0px, transparent 50%),
+radial-gradient(at 50% 88%, hsla(348,60%,72%,1) 0px, transparent 50%),
+radial-gradient(at 3% 0%, hsla(99,77%,68%,1) 0px, transparent 50%);
+    height: 100vh;
+    position: relative;}
+    #boxinicio-vb{position:relative;width:100%;height:100%;padding: 20vh 0 20vh 0;}
+    #vb-rrss{position:absolute;bottom:0px;left:0px;height:60px;background:rgba(0,0,0,0.65);border-radius:0px 45px 0px 0px;z-index:999;}
+    #vb-rrss .lista-rrss{list-style: none;margin-left: 15px;padding-right: 20px;display: flex;align-items: center;height: 100%;}
+    #vb-rrss a:link,#vb-rrss a:visited{color: white;text-decoration: none;}
+    .ibox{position:relative;float:left;height:100%;width:50%;display:inline-block;}
+    .ibox1{text-align:center;overflow:hidden;}
+    .ibox1 .mockup{max-height:100% !important;}
+    .ibox2{}
+    .ibox2-1{padding: 20px 30px 10px 30px;text-align: justify;width: 85%;background:rgba(0,0,0,0.4);backdrop-filter: blur(2px);border: solid 2px var(--vb-colorf1);}
+
+    .vb-h{color:var(--vb-colorf1);font-family:var(--vb-fuenteh);font-weight: 100 !important;}
+    .vb-p{color:white;font-family:var(--vb-fuentep);}
+    .vb-flex-cy{display:flex;align-items: center;}
+    .vbc1{color:var(--vb-color1);}
+    /* BOTON */
+    .mcenter{display:flex;justify-content: center;}
+    .vb-button{ -moz-appearance: none; -webkit-appearance: none; appearance: none; border: none; background: none; color: #0f1923; cursor: pointer; position: relative; padding: 8px; margin-bottom: 20px; text-transform: uppercase; font-weight: bold; font-size: 14px; transition: all .15s ease;} 
+    .vb-button::before, .vb-button::after{ content: ''; display: block; position: absolute; right: 0; left: 0; height: calc(50% - 5px); border: 1px solid #7D8082; transition: all .15s ease;} 
+    .vb-button::before{ top: 0; border-bottom-width: 0;} 
+    .vb-button::after{ bottom: 0; border-top-width: 0;} 
+    .vb-button:active, .vb-button:focus{ outline: none; background-color: unset !important;} 
+    .vb-button:active::before, .vb-button:active::after{ right: 3px; left: 3px;} 
+    .vb-button:active::before{ top: 3px;} 
+    .vb-button:active::after{ bottom: 3px;} 
+    .vb-button_lg{ position: relative; display: block; padding: 10px 20px; color: #fff; background-color: #0f1923; overflow: hidden; box-shadow: inset 0px 0px 0px 1px transparent;} 
+    .vb-button_lg::before{ content: ''; display: block; position: absolute; top: 0; left: 0; width: 2px; height: 2px; background-color: #0f1923;} 
+    .vb-buttona_lg::after{ content: ''; display: block; position: absolute; right: 0; bottom: 0; width: 4px; height: 4px; background-color: #0f1923; transition: all .2s ease;} 
+    .vb-button_sl{ display: block; position: absolute; top: 0; bottom: -1px; left: -8px; width: 0; background-color: var(--vb-color1); transform: skew(-15deg); transition: all .2s ease;} 
+    .vb-button_text{ position: relative;} 
+    .vb-button:hover{ color: #F27121; background-color: unset !important;} 
+    .vb-button:hover .vb-button_sl{ width: calc(100% + 15px);} 
+    .vb-button:hover .vb-button_lg::after{ background-color: #fff;}
+
+    /* ESTILO PLANES VERTICEB */
+    #servicios{background-color: var(--vb-fondo1);width:100%;position: relative;padding:50px 0;font-family: var(--vb-fuenteh);}
+    .service-box{width:100%;position: relative;}
+    .service-row{display:flex;justify-content: space-around;}
+    .box-serv-vb{width:30vw;}
+    .generic_feature_list .fa-check{color:greenyellow;}
+    .generic_feature_list .fa-x{color:red;}
+    .generic_feature_list .fa-bolt{color:#F27121}
+    #servicios .servicios_cont{background-color: #fff;}
+    #servicios .servicios_cont .generic_head_price{background-color: #f6f6f6;}
+    #servicios .servicios_cont .generic_head_price .generic_head_content .head_bg{border-color: #e4e4e4 rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #e4e4e4;}
+    #servicios .servicios_cont .generic_head_price .generic_head_content .head span{color: #525252;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag .price .sign{color: #414141;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag .price .currency{color: #414141;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag .price .cent{color: #414141;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag .month{color: #414141;}
+    #servicios .servicios_cont .generic_feature_list ul li{color: #a7a7a7;}
+    #servicios .servicios_cont .generic_feature_list ul li span{color: #414141;}
+    #servicios .servicios_cont .generic_feature_list ul li:hover{background-color: #E4E4E4;border-left: 5px solid var(--vb-color2);}
+    #servicios .servicios_cont .generic_price_btn a{border: 2px solid var(--vb-color3);color: var(--vb-color3);} 
+    #servicios .servicios_cont:hover .generic_head_price .generic_head_content .head_bg{border-color: var(--vb-color2) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) var(--vb-color2);color: #fff;}
+    #servicios .servicios_cont:hover .generic_head_price .generic_head_content .head span{color: #fff;}
+    #servicios .servicios_cont:hover .generic_price_btn a{background: #371b70;background: -webkit-linear-gradient(to right, #c711e0, #371b70);
+        background: linear-gradient(to right, #c711e0, #371b70);;color: #fff;} 
+    #servicios .servicios_cont{overflow: hidden;position: relative;text-align: center;}
+    #servicios .servicios_cont .generic_head_price{margin: 0 0 20px 0;}
+    #servicios .servicios_cont .generic_head_price .generic_head_content{margin: 0 0 50px 0;}
+    #servicios .servicios_cont .generic_head_price .generic_head_content .head_bg{border-style: solid;border-width: 90px 1411px 23px 399px;position: absolute;}
+    #servicios .servicios_cont .generic_head_price .generic_head_content .head{padding-top: 40px;position: relative;z-index: 1;}
+    #servicios .servicios_cont .generic_head_price .generic_head_content .head span{font-family: Montserrat, "Helvetica Neue", sans-serif;font-size: 28px;
+        font-weight: 400;letter-spacing: 2px;margin: 0;padding: 0;text-transform: uppercase;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag{padding: 0 0 20px;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag .price{display: block;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag .price .sign{display: inline-block;font-family: Montserrat, "Helvetica Neue", sans-serif;
+        font-size: 28px;font-weight: 400;vertical-align: bottom;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag .price .currency{font-family: "Lato",sans-serif;font-size: 60px;font-weight: 300;
+        letter-spacing: -2px;line-height: 60px;padding: 0;vertical-align: middle;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag .price .cent{display: inline-block;font-family: Montserrat, "Helvetica Neue", sans-serif;
+        font-size: 24px;font-weight: 400;vertical-align: bottom;}
+    #servicios .servicios_cont .generic_head_price .generic_price_tag .month{font-family: Montserrat, "Helvetica Neue", sans-serif;font-size: 18px;
+        font-weight: 400;letter-spacing: 3px;vertical-align: bottom;}
+    #servicios .servicios_cont .generic_feature_list ul{list-style: none;padding: 0;margin: 0;}
+    #servicios .servicios_cont .generic_feature_list ul li{font-family: Montserrat, "Helvetica Neue", sans-serif;font-size: 18px;padding: 8px 0;
+        transition: all 0.3s ease-in-out 0s;}
+    #servicios .servicios_cont .generic_feature_list ul li:hover{transition: all 0.3s ease-in-out 0s;-moz-transition: all 0.3s ease-in-out 0s;
+        -ms-transition: all 0.3s ease-in-out 0s;-o-transition: all 0.3s ease-in-out 0s;-webkit-transition: all 0.3s ease-in-out 0s;}
+    #servicios .servicios_cont .generic_feature_list ul li .fa{padding: 0 10px;}
+    #servicios .servicios_cont .generic_price_btn{margin: 20px 0 32px;}
+    #servicios .servicios_cont .generic_price_btn a{border-radius: 50px;-moz-border-radius: 50px;-ms-border-radius: 50px;-o-border-radius: 50px;
+        -webkit-border-radius: 50px;display: inline-block;font-family: Montserrat, "Helvetica Neue", sans-serif;font-size: 18px;outline: medium none;
+        padding: 12px 30px;text-decoration: none;text-transform: uppercase;}
+    #servicios .servicios_cont,#servicios .servicios_cont:hover,#servicios .servicios_cont .generic_head_price .generic_head_content .head_bg,
+    #servicios .servicios_cont:hover .generic_head_price .generic_head_content .head_bg,#servicios .servicios_cont .generic_head_price .generic_head_content 
+    .head h2, #servicios .servicios_cont:hover .generic_head_price .generic_head_content .head h2, #servicios .servicios_cont .price, #servicios .servicios_cont:hover 
+    .price, #servicios .servicios_cont .generic_price_btn a, #servicios .servicios_cont:hover .generic_price_btn a{transition: all 0.3s ease-in-out 0s;
+        -moz-transition: all 0.3s ease-in-out 0s;-ms-transition: all 0.3s ease-in-out 0s;-o-transition: all 0.3s ease-in-out 0s;-webkit-transition: all 0.3s ease-in-out 0s;} 
+    .price-heading{text-align: center;}
+    .price-heading h2{margin: 0;padding: 0 0 10px 0;font-size:2.5rem;font-weight: 100;color:white;}
+    .price-heading h3{margin: 0px 0px 20px 0px;font-weight: unset;}
+    .focus{color: var(--vb-color5);}
+    /* Media Queries moviles y smalls screen */
+    @media (max-width: 1200px){
+        .ibox2-1 {padding: 10px 30px 10px 30px;width: 90%;}
+        #inicio-vb{padding-top: 8vh;}
+        #boxinicio-vb {padding: 0 !important;}
+        .ibox1{display: flex;align-items: center;}
+    }
+    @media (max-width: 1020px) {
+    .service-row{flex-wrap: wrap;}
+    .box-serv-vb{width:40vw;}
+    .service-row{gap:0;column-gap: 8vw;}	
+    }
+    @media (max-width: 860px){
+        #inicio-vb{height:unset !important;}
+        #boxinicio-vb{margin-top:0 !important;height:unset !important;}
+        .ibox{float:none !important;width:unset;height:unset;}
+        .ibox1{margin-top:100px;}
+        .ibox2{padding-bottom:80px;}
+        .ibox2-1{backdrop-filter: blur(5px);}
+        .vb-flex-cy {justify-content: center;}
+        .vb-h{text-align:center;}
+    }
+    @media (max-width: 800px) {
+	#servicios .servicios_cont{margin-bottom:75px;}
+    .box-serv-vb{width:80vw;}	
+    }
+    @media (max-width: 768px){
+            #servicios .servicios_cont{margin-bottom:75px;}      
+    }
+</style>
+<!-- LANDING VERTICEB -->
+    <div id="inicio-vb">
+    
+    <div id="boxinicio-vb">
+        <div class="ibox ibox1" data-aos="fade-right" data-aos-duration="800">
+            <img class="mockup" src="https://verticeb.com/wp-content/uploads/2025/03/VerticeB_Mockup.png" alt="Mockup VerticeB" title="VerticeB Consultoria Digital"/>
+        </div>
+        <div class="ibox ibox2 vb-flex-cy" data-aos="fade-left" data-aos-duration="800">
+            <div class="ibox2-1">
+                <h1 class="vb-h">Vértice<span class="vb">B</span> <span class="vbc1">|</span> Consultoría digital</h1>
+                <p class="vb-p">En <span>Vértice</span><span class="vb">B</span>, ofrecemos consultoría digital especializada y desarrollo de páginas web que sigue las últimas estrategias para llevar tu proyecto al siguiente nivel. Nos enfocamos en desarrollo web, diseño web, e imagen corporativa, proporcionando soluciones tecnológicas innovadoras y asesoría digital de calidad. Diseñamos planes personalizados que se adaptan a tus objetivos, necesidades y limitaciones, mejorando cada fase de manera progresiva y flexible.</p>
+                <p class="vb-p">Te invitamos a explorar nuestro sitio web para conocer más sobre nuestra filosofía y metodología de trabajo.</p>
+                <a href="#contacto">
+                <div class="mcenter">
+                <button class="vb-button">
+                    <span class="vb-button_lg">
+                        <span class="vb-button_sl"></span>
+                        <span class="vb-button_text">Solicitar presupuesto</span>
+                    </span>
+                </button>
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div id="vb-rrss">
+        <ul class="lista-rrss">
+            <li class="social-navigation"><a target="_blank" href="https://www.instagram.com/verticevb/" rel="noopener"></a></li>
+        </ul>
+    </div>
+    
+    </div>
+
+<!-- SERVICIOS TABLA DE PRECIOS -->
+<!--
+<div id="servicios">   
+    <div class="service-box">
+        <div class="row">
+            <div>
+                <div class="price-heading clearfix">
+                    <h2>Selecciona tu plan digital ideal</h2>
+                    <h3>En <span class="focus">VerticeB</span> también ofrecemos servicios para ayudarte a impulsar tu marca o negocio.</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="service-box">
+           
+    !-- SELECCIONAR PACK DESEADO --
+    <div class="service-row">
+        <div class="box-serv-vb">
+            <div class="servicios_cont clearfix">
+                <div class="generic_head_price clearfix">
+                    <div class="generic_head_content clearfix">
+                        <div class="head_bg"></div>
+                        <div class="head">
+                            <span>Redes sociales</span>
+                        </div>
+                    </div>
+                    <div class="generic_price_tag clearfix">	
+                        <span class="price">
+                            <span class="month">Desde </span>
+                            <span class="currency">30</span>
+                            <span class="cent">.00</span>
+                            <span class="sign">€</span>
+                            <span class="month">/MES</span>
+                        </span>
+                    </div>                
+                </div>                            
+                <div class="generic_feature_list">
+                    <ul>
+                        <li><span>Evaluación y desarrollo inicial</li>
+                        <li><span>Trabajamos con hasta 3 plataformas</li>
+                        <li><span>Realización de publicaciones</li>
+                        <li><span>Seguimiento de campañas publicitarias</li>
+                        <li><span>Creación de audiencias potenciales</li>
+                        <li><span>Informes mensuales basicos y detallados</li>
+                    </ul>
+                </div>
+                <div class="generic_price_btn clearfix">
+                    <a href="#social">Comparar planes</a>
+                </div>
+            </div>    
+        </div>
+        
+        <div class="box-serv-vb">
+            <div class="servicios_cont clearfix">
+                <div class="generic_head_price clearfix">
+                    <div class="generic_head_content clearfix">
+                        <div class="head_bg"></div>
+                        <div class="head">
+                            <span>Gestion web</span>
+                        </div>
+                    </div>
+                    <div class="generic_price_tag clearfix">	
+                        <span class="price">
+                            <span class="month">Desde </span>
+                            <span class="currency">60</span>
+                            <span class="cent">.00</span>
+                            <span class="sign">€</span>
+                            <span class="month">/MES</span>
+                        </span>
+                    </div> 
+                </div>                            
+                <div class="generic_feature_list">
+                    <ul>
+                        <li><span>Personalización de sitio web</li>
+                        <li><span>Creación de contenido web</li>
+                        <li><span>Optimización de sitio web</li>
+                        <li><span>Corrección de errores web</li>
+                        <li><span>Seguridad, migración y backups</li>
+                        <li><span>Soporte y gestión web integral</li>
+                    </ul>
+                </div>
+                <div class="generic_price_btn clearfix">
+                    <a href="#webmg">Comparar planes</a>
+                </div>
+            </div>     
+        </div>
+        
+        <div class="box-serv-vb">
+            <div class="servicios_cont clearfix">
+                <div class="generic_head_price clearfix">
+                    <div class="generic_head_content clearfix">
+                        <div class="head_bg"></div>
+                        <div class="head">
+                            <span>SEO & SEM</span>
+                        </div>
+                    </div>
+                    <div class="generic_price_tag clearfix">	
+                        <span class="price">
+                            <span class="month">Desde </span>
+                            <span class="currency">100</span>
+                            <span class="cent">.00</span>
+                            <span class="sign">€</span>
+                            <span class="month">/MES</span>
+                        </span>
+                    </div>
+                </div>                            
+                <div class="generic_feature_list">
+                    <ul>
+                        <li><span>Posicionamiento web SEO</li>
+                        <li><span>Marketing de motores de busqueda</li>
+                        <li><span>Mejora de SEO local</li>
+                        <li><span>Gestión de campañas y metricas</li>
+                        <li><span>Estudio de keywords y correcciones web</li>
+                        <li><span>SEO especializado en E-commerce</li>
+                    </ul>
+                </div>
+                <div class="generic_price_btn clearfix">
+                    <a href="#seosem">Comparar planes</a>
+                </div>
+            </div>
+        </div>  
+    </div>
+    </div>          
+</div>
+-->

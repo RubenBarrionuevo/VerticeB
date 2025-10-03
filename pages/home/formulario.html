@@ -1,0 +1,110 @@
+<style>
+    #contacto{font-family:var(--vb-fuentep) !important;position:relative}
+    #vb-formc{width:100%;float:right;background: linear-gradient(35deg, var(--vb-color3), var(--vb-color4));padding: 40px 90px;color:white}
+    #contacto > #vb-formc > h3{font-family:var(--vb-fuenteh);font-size: 2rem;font-weight: 100;margin-bottom: 0px;color:var(--vb-color2)}
+    #contacto > #vb-formc > p{font-family:var(--vb-fuentep)}
+    
+    .wpcf7-not-valid-tip {color:red;}
+    .input-group {position: relative;}
+    
+    .input-group p .wpcf7-form-control-wrap input  {
+      border: 2px solid var(--vb-color1);
+      background: white;
+      padding: 1rem;
+      font-size: 1rem;
+      color: black;
+      width: 60%;
+    }
+    
+    .wpcf7-submit{color: white !important;background-color: #0f1923 !important;transition:all 0.8s;}
+    .wpcf7-submit:hover{background:white !important;color:black !important}
+    
+    .input-group p .wpcf7-form-control-wrap input :focus,input:valid {
+      outline: none;
+      --angle: 0deg;
+      border-bottom: 3px solid;
+      border-image: conic-gradient(from var(--angle), white, var(--vb-color1), var(--vb-color1), var(--vb-color1), white) 1;
+      animation: 3s rotate9234 linear infinite;
+    }
+    /* CHECKBOX */
+    .wpcf7-checkbox{display: flex;flex-wrap: wrap;gap: 2.5rem;row-gap: 2.5rem;justify-content: center;}
+    .wpcf7-checkbox .wpcf7-list-item{display: inline-block;float: left;position: relative;width: 100px;height: 100px;margin:0;}
+    /* MODELO ENCONTRADO */
+    .wpcf7-checkbox .wpcf7-list-item label input{clip: rect(0 0 0 0);-webkit-clip-path: inset(100%);clip-path: inset(100%);height: 1px;overflow: hidden;position: absolute;white-space: nowrap;width: 1px;cursor:pointer;}
+    .wpcf7-list-item-label{height: 100%;line-height:55px;display: flex;align-items: center;text-align: center;position: relative;z-index: 5;cursor:pointer;border:solid 2px white;border-radius:20px;transition:all 0.8s;}
+    
+    .wpcf7-checkbox .wpcf7-list-item label input:checked + .wpcf7-list-item-label{cursor:pointer;box-shadow: 1px 10px 30px var(--vb-color2);border:solid 2px var(--vb-color2);}
+    /* FIN MODELO ENCONTRADO */
+    .wpcf7-list-item::before {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        line-height: 100px;
+        font-family: 'FontAwesome';
+        font-size:28px;
+        color: white;
+        z-index:1;
+    }
+    .wpcf7-list-item:nth-child(1)::before {
+        content: "\f121";
+    }
+    .wpcf7-list-item:nth-child(2)::before {
+        content: "\f3cf";
+    }
+    .wpcf7-list-item:nth-child(3)::before {
+        content: "\f5ad";
+    }
+    .wpcf7-list-item:nth-child(4)::before {
+        content: "\f2b5";
+    }
+    .wpcf7-list-item:nth-child(5)::before {
+        content: "\e0e3";
+    }
+    .wpcf7-list-item:nth-child(6)::before {
+        content: "\f0a1";
+    }
+    .wpcf7-list-item:nth-child(7)::before {
+        content: "\f086";
+    }
+    .wpcf7-list-item:nth-child(8)::before {
+        content: "\f06a";
+    }
+    
+    
+    @keyframes rotate9234 {
+      to {
+        --angle: 360deg;
+      }
+    }
+    
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    
+    .input-group p .wpcf7-form-control-wrap input :focus~label,
+    input:valid~label {
+      transform: translateY(235%) scale(1);
+      background-color: #e8e8e8;
+      padding: 0 .2em;
+      color: #2196f3;
+    }
+    @media (max-width: 1300px){
+        #vb-formc {width: 100%;padding:5vw 2.5vw;}
+    }
+    @media (max-width: 800px){
+    .input-group p .wpcf7-form-control-wrap input {width:80%;}
+    }
+    @media (max-width: 600px){
+        #vb-formc {width: 100%;padding: 40px 10px;}
+    }
+    </style>
+    <div id="contacto">
+    <div id="vb-formc">
+    <h3>Formulario de contacto</h3>
+    <p>Indicanos como podemos ayudarte</p>
+        [contact-form-7 id="f359eed" title="Solicitar presupuesto"]
+    </div> 
+    </div>
